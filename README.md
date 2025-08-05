@@ -16,6 +16,8 @@ The final model acts as a **general-purpose shape colorizer**, capable of handli
   <b>Example:</b><br>
   <i>The model takes a polygon shape and a color name to generate a colored output.</i>
 </p>
+![Alt Text](blue_circle)
+
 
 ---
 
