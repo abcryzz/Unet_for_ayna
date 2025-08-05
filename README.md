@@ -15,8 +15,9 @@ The final model acts as a **general-purpose shape colorizer**, capable of handli
 <p align="center">
   <b>Example:</b><br>
   <i>The model takes a polygon shape and a color name to generate a colored output.</i>
+  
 </p>
-![Alt Text](Unet_for_ayna/blue_circle.png)
+
 
 
 ---
