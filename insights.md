@@ -80,7 +80,6 @@ The final training run produced an exceptional result: a validation loss (0.0038
 
 ## 4. Key Learnings
 
-- **Systematic Experimentation is Non-Negotiable:** Rigorous ablation studies provided concrete evidence for each architectural and hyperparameter choice.  
 - **Advanced Learning Rate Management is a Key Lever:** The CosineAnnealingLR scheduler was the single most impactful change for achieving state-of-the-art results.  
 - **Data Pipeline Integrity is Paramount:** Ensuring a consistent, bug-free data pipeline—especially for shared components like encoders—proved as important as model design.  
 - **Validation Loss is the Ultimate Arbiter:** A lower validation loss than training loss indicates strong generalization, confirming the effectiveness of the chosen training strategy.  
