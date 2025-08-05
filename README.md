@@ -72,7 +72,7 @@ Run the model instantly using the provided [Colab Notebook](https://colab.resear
      * Change the input path:
 
        ```python
-       INPUT_POLYGON_PATH = '/content/my_star.png'
+       INPUT_POLYGON_PATH = '/content/circle.png'
        ```
 
    * 🌈 **New Color:**
@@ -81,7 +81,7 @@ Run the model instantly using the provided [Colab Notebook](https://colab.resear
      * Update the input color:
 
        ```python
-       INPUT_COLOR = 'magenta'
+       INPUT_COLOR = 'blue'
        ```
 
 5. **View Results:**
