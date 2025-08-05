@@ -40,10 +40,17 @@ The final model acts as a **general-purpose shape colorizer**, capable of handli
   Includes a ready-to-use model (`best_model_augmented.pth`) for immediate inference in **Google Colab**.
 
 ---
+## 🧑‍💻 Getting Started: Inference with Kaggle
 
-## 🧑‍💻 Getting Started: Inference with Google Colab
+Run the model instantly using the provided Kaggle Notebook:
 
-Run the model instantly using the provided [Colab Notebook](https://colab.research.google.com/):
+![alt text](https://kaggle.com/static/images/open-in-kaggle.svg)
+
+
+
+## 🧑‍💻 Getting Started: To know the complete training code with Google Colab
+
+Run the whole model instantly using the provided [Colab Notebook](https://colab.research.google.com/):
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/)
 
