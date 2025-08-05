@@ -1,103 +1,147 @@
-Conditional Polygon Coloring with a U-Net in PyTorch
 
-This repository contains the complete project for the Ayna ML Assignment. The goal was to build and train a deep learning model that can take an image of a polygon and a color name as input, and produce an image of that polygon filled with the specified color.
+---
 
-The final model is a general-purpose shape colorizer, capable of handling arbitrary polygon shapes, not just those seen during training. This was achieved through a combination of a U-Net architecture, a channel-wise conditioning strategy, and a robust data augmentation pipeline.
+# 🎨 Conditional Polygon Coloring with a U-Net in PyTorch
 
-<br>
+This repository contains the complete project for the **Ayna ML Assignment**.
+The objective was to build and train a deep learning model that takes **an image of a polygon** and a **color name** as input, and produces an image of that polygon filled with the specified color.
 
+The final model acts as a **general-purpose shape colorizer**, capable of handling **arbitrary polygon shapes**, not just those seen during training. This was achieved using:
 
-<p align="center">Example of the model taking a shape and a color name to produce the final output.</p>
+* A custom **U-Net architecture**
+* A **channel-wise conditioning** strategy
+* A **robust, synchronized data augmentation** pipeline
 
-<br>
+<p align="center">
+  <b>Example:</b><br>
+  <i>The model takes a polygon shape and a color name to generate a colored output.</i>
+</p>
 
-Features
+---
 
-U-Net Architecture: Implemented from scratch in PyTorch for high-fidelity image-to-image translation.
+## 🚀 Features
 
-Conditional Generation: The model is conditioned on text-based color names using a channel-wise concatenation strategy.
+* **🧠 U-Net Architecture**
+  Implemented from scratch in PyTorch for high-fidelity image-to-image translation.
 
-Data Augmentation: The training pipeline includes a synchronized augmentation process (rotation, scaling, translation) to ensure the model is robust and generalizes well to unseen shapes and orientations.
+* **🎨 Conditional Generation**
+  Conditioned on **text-based color names** using a **channel-wise concatenation** strategy.
 
-Experiment Tracking: All experiments, hyperparameter tuning, and model versions were rigorously tracked using Weights & Biases. You can view the full project dashboard here:
+* **🧪 Data Augmentation**
+  Training includes **synchronized augmentations** (rotation, scaling, translation) for improved generalization.
 
-W&B Project Link: https://wandb.ai/hibifovohig3-add/ayna-ml-polygon-coloring
+* **📊 Experiment Tracking**
+  All experiments, tuning, and versions tracked via [Weights & Biases](https://wandb.ai/hibifovohig3-add/ayna-ml-polygon-coloring).
 
-Ready-for-Inference: The repository includes a pre-trained model file (best_model_augmented.pth) and a Google Colab notebook ready for immediate use.
+* **🧠 Pretrained Model**
+  Includes a ready-to-use model (`best_model_augmented.pth`) for immediate inference in **Google Colab**.
 
-Getting Started: Inference with Google Colab
+---
 
-The easiest way to use this model and see it in action is to use the provided Google Colab notebook. It includes all the necessary code to download the model, set up the environment, and run inference on any shape you provide.
+## 🧑‍💻 Getting Started: Inference with Google Colab
 
-Prerequisites
+Run the model instantly using the provided [Colab Notebook](https://colab.research.google.com/):
 
-A Google Account to access Google Colab.
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/)
 
-Instructions
+### 🔧 Prerequisites
 
-Open the Notebook: Click the badge below to open the main project notebook directly in Google Colab.
+* A Google account
+* No local setup needed!
 
-![alt text](https://colab.research.google.com/assets/colab-badge.svg)
+### 📋 Instructions
 
-Connect to a Runtime: In the Colab interface, click the "Connect" button in the top-right corner. For faster inference, you can select a GPU runtime by navigating to Runtime -> Change runtime type -> Hardware accelerator -> GPU.
+1. **Open the Notebook:**
+   Click the Colab badge above or open `Ayna_ML_Assignment.ipynb`.
 
-Run the Inference Cells: The notebook is divided into sections. For inference, you only need to run the cells under the "FINAL, STREAMLINED INFERENCE CELL" section.
+2. **Connect to Runtime:**
+   Click **"Connect"** (top right), then switch to GPU via
+   `Runtime` → `Change runtime type` → `Hardware accelerator` → `GPU`.
 
-The first cell in this section will set up the environment and download the pre-trained model.
+3. **Run Inference Cells:**
+   Only run cells under the **"FINAL, STREAMLINED INFERENCE CELL"** section:
 
-The second cell contains the code to perform the inference.
+   * The first cell sets up the environment and loads the model.
+   * The second cell runs inference.
 
-Customize Your Input: In the final cell, you can easily change the input image and color:
+4. **Customize Inputs:**
 
-To use a new shape:
+   * 🔷 **New Shape:**
 
-In the Colab file browser (folder icon on the left), upload your custom shape image (e.g., my_star.png).
+     * Upload your shape image (e.g., `my_star.png`) to Colab.
+     * Change the input path:
 
-Change the INPUT_POLYGON_PATH variable to point to your file:
+       ```python
+       INPUT_POLYGON_PATH = '/content/my_star.png'
+       ```
 
-Generated python
-INPUT_POLYGON_PATH = '/content/my_star.png'
+   * 🌈 **New Color:**
 
+     * Choose a color from the "Available colors" list in the notebook.
+     * Update the input color:
 
-To use a new color:
+       ```python
+       INPUT_COLOR = 'magenta'
+       ```
 
-Choose a color from the "Available colors" list printed in the cell output.
+5. **View Results:**
+   Your input shape and the final colored output will be displayed automatically.
 
-Change the INPUT_COLOR variable:
+---
 
-Generated python
-INPUT_COLOR = 'magenta'
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-Python
-IGNORE_WHEN_COPYING_END
+## 📁 Project Structure
 
-View the Result: After running the cell, the notebook will display your input shape and the final colored output generated by the model.
-
-Project Structure
-
-For those interested in the full project development, the repository contains:```
+```bash
 .
 ├── checkpoints/
-│ └── best_model_augmented.pth # The final, pre-trained model weights
+│   └── best_model_augmented.pth      # Final pretrained model
 ├── dataset/
-│ ├── training/ # Training data (images, JSON)
-│ └── validation/ # Validation data (images, JSON)
-├── Ayna_ML_Assignment.ipynb # The main Google Colab notebook with all code
-└── README.md # This file
+│   ├── training/                     # Training data (images, JSON)
+│   └── validation/                   # Validation data (images, JSON)
+├── Ayna_ML_Assignment.ipynb         # Main Colab notebook (training + inference)
+└── README.md                         # This file
+```
 
-Generated code
-The `Ayna_ML_Assignment.ipynb` notebook is comprehensive and includes the code for all experiments, including the inferior methods tested (MSELoss, Bottleneck Injection) and the final, augmented training run. This provides a complete, transparent view of the entire development process.
+---
 
-## **Key Learnings**
+## 🧪 Experiments & Training
 
-*   **Synchronized Augmentation is a Game-Changer:** This was the most impactful technique for improving model robustness, transforming it from a simple memorizer to a general-purpose tool.
-*   **Systematic Experimentation Builds Better Models:** By testing and logging multiple approaches, we generated concrete evidence to prove *why* the final combination of techniques (L1Loss, Channel-wise Conditioning, LR Scheduling, and Augmentation) was the optimal choice.
-*   **The Data Pipeline is Part of the Model:** Ensuring a consistent, bug-free data pipeline (especially regarding shared components like encoders) is as important as designing the neural network itself.
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-IGNORE_WHEN_COPYING_END
+The notebook (`Ayna_ML_Assignment.ipynb`) contains:
+
+* Inferior methods tested (e.g., MSELoss, Bottleneck Injection)
+* Final training with:
+
+  * **L1 Loss**
+  * **Channel-wise conditioning**
+  * **Learning rate scheduling**
+  * **Synchronized augmentations**
+
+Everything is tracked and reproducible via [W\&B](https://wandb.ai/hibifovohig3-add/ayna-ml-polygon-coloring).
+
+---
+
+## 📚 Key Learnings
+
+* 🔄 **Synchronized Augmentation is a Game-Changer**
+  Prevented overfitting and helped the model generalize to unseen shapes.
+
+* 🔍 **Systematic Experimentation Builds Better Models**
+  Comparing multiple loss functions, injection strategies, and data pipelines led to an optimal combination.
+
+* 🔗 **The Data Pipeline *is* Part of the Model**
+  Reliable, bug-free preprocessing (e.g., consistent encodings) is crucial for performance.
+
+---
+
+## 📎 Links
+
+* 🔗 [W\&B Dashboard](https://wandb.ai/hibifovohig3-add/ayna-ml-polygon-coloring)
+* 🧠 [Open in Google Colab](https://colab.research.google.com/)
+
+---
+
+Feel free to clone, explore, and contribute to the project.
+If this project helped you or sparked ideas, consider giving it a ⭐!
+
+---
+
